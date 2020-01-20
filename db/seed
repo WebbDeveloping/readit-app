@@ -1,0 +1,49 @@
+    USERS   
+-- create table rusers (
+-- id serial primary key,
+-- name varchar(255),
+-- image varchar(255),
+-- created_at TIMESTAMP
+-- )
+INSERT USERS
+-- insert into rusers(
+-- name,
+-- image,
+-- created_at
+-- ) values (
+-- 'joe dirt',
+-- 'image-jd',
+-- now()
+-- )
+
+POSTS
+-- create table rposts (
+-- id serial primary key,
+-- image varchar(255),
+-- title varchar(255),
+-- description varchar(255),
+-- url varchar(255),
+-- subread_id integer, foreign key (subread_id) references rsubreads(subread_id),
+-- created_at timestamp,
+-- updated_at timestamp
+-- )
+-- INSERT INTO rposts ( image, title, description, url, subread_id, created_at, updated_at) values ('jskitty.img', 'I am teaching my cat JavaScript', 'I dont think he is catching on quickly. But I am doing my best', 'kitty.com', 1, now(), now() )
+
+SUBREADS
+-- create table rsubreads(
+-- subread_id serial primary key,
+-- name varchar(255),
+-- description varchar(255),
+-- created_at TIMESTAMP
+-- )
+
+INSERT SUBREADS
+insert into rsubreads(
+name,
+description,
+created_at
+) values (
+'Prepared',
+'A book about a principle of a private high schhol. about reworking the new school system',
+now()
+)
