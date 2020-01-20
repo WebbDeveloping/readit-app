@@ -47,3 +47,21 @@ created_at
 'A book about a principle of a private high schhol. about reworking the new school system',
 now()
 )
+
+COMMENTS
+create table rcomments (
+comment_id serial primary key,
+content text,
+user_id integer,
+foreign key (user_id) REFERENCES
+rusers(id),
+post_id integer,
+foreign key (post_id) REFERENCES
+rposts(id),
+subread_id integer,
+foreign key (subread_id) REFERENCES
+rsubreads(subread_id),
+parent_id integer,
+created_at timestamp,
+updated_at timestamp
+)

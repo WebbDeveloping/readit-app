@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const massive = require('massive');
 const { PORT, CONNECTION_STRING } = process.env;
+const cc = require('./controllers/controller');
 
 const app = express();
 
@@ -14,6 +15,8 @@ massive(CONNECTION_STRING)
   .catch(err => {
     console.log(err);
   });
+
+app.get(`/api/getPosts`, cc.getPosts);
 
 app.listen(PORT, () => {
   console.log(`Knock Knock.. It's port ${PORT}`);
