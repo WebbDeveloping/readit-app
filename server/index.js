@@ -16,6 +16,7 @@ massive(CONNECTION_STRING)
     console.log(err);
   });
 
+app.get(`/api/getSubs`, cc.getSubs);
 app.get(`/api/getPosts`, cc.getPosts);
 
 app.listen(PORT, () => {

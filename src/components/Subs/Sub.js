@@ -1,10 +1,12 @@
 import React from 'react';
+import './Sub.css';
 
 const Sub = props => (
   <div className='sub'>
-    <h1>Name</h1>
-    <div classssName='sub-content'>
-      <h5>Description</h5>
+    {console.log('sub props', props)}
+    <h1>{props.name}</h1>
+    <div className='sub-content'>
+      <h5>{props.desc}</h5>
     </div>
     <div className='sub-posts'>
       <div className='post'>1</div>
@@ -13,3 +15,5 @@ const Sub = props => (
     </div>
   </div>
 );
+
+export default Sub;
