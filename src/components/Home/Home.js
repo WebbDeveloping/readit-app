@@ -21,18 +21,14 @@ export default class Home extends Component {
     });
   }
   render() {
-    const subreads = this.state.posts.forEach((v, i, s) => {
-      //   console.log('s', s);
-      console.log('v', v);
-      this.state.subs.push(v.name);
-      //   console.log('i', i);
-      //   return <h1>{v.description}</h1>;
+    const { posts, subs } = this.state;
+    const subreads = posts.forEach((v, i, s) => {
+      subs.push(v.name);
     });
-    console.log(123, this.state.subs);
     return (
       <div>
         <h1>HOMEEEE</h1>
-        <h1>{this.state.subs}</h1>
+        <h1>{subs}</h1>
         {subreads}
       </div>
     );
