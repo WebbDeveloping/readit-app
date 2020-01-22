@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Sub from '../Subs/Sub';
+import Post from '../Posts/Post';
 
 export default class Home extends Component {
   constructor() {
@@ -11,17 +12,7 @@ export default class Home extends Component {
     };
   }
   componentDidMount() {
-    axios.get(`/api/getSubs`).then(res => {
-      //   console.log(res.data);
-      if (res.data) {
-        // this.props.adminLoggedIn(res.data);
-      }
-      this.setState({
-        subs: res.data
-      });
-    });
     axios.get(`/api/getPosts`).then(res => {
-      //   console.log(res.data);
       if (res.data) {
         // this.props.adminLoggedIn(res.data);
       }
@@ -32,20 +23,27 @@ export default class Home extends Component {
   }
   render() {
     const { posts, subs } = this.state;
-    // const subreads = posts.forEach((v, i, s) => {
-    //   subs.push(v);
-    //   // return <Subs />;
-    // });
+    console.log('posts', posts);
 
-    const subposts = subs.map((v, i, s) => {
-      console.log('count', v);
+    const subposts = posts.map((v, i, s) => {
       return (
-        <Sub
+        // <Sub
+        //   key={i}
+        //   id={v.subread_id}
+        //   name={v.name}
+        //   desc={v.description}
+        //   created={v.created_at}
+        // />
+        <Post
           key={i}
-          id={v.subread_id}
-          name={v.name}
+          img={v.image}
+          title={v.title}
           desc={v.description}
-          created={v.created_at}
+          url={v.url}
+          subid={v.subread_id}
+          created={caches.created_at}
+          udated={v.updated_at}
+          name={v.name}
         />
       );
     });
@@ -53,8 +51,6 @@ export default class Home extends Component {
     return (
       <div>
         <h1>HOMEEEE</h1>
-        {/* <h1>{subs}</h1> */}
-        {/* {subreads} */}
         {subposts}
       </div>
     );

@@ -1,4 +1,4 @@
 select * 
 from  rposts p 
-join rsubreads s on p.subread_id = s.id
-where subread_id = $1;
+join rsubreads on p.subread_id = rsubreads.subread_id
+where p.subread_id < 100;
