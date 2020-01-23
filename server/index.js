@@ -18,6 +18,7 @@ massive(CONNECTION_STRING)
 
 app.get(`/api/getSubs`, cc.getSubs);
 app.get(`/api/getPosts`, cc.getPosts);
+app.get(`/api/singlePost/:id`, cc.getSinglePost);
 
 app.listen(PORT, () => {
   console.log(`Knock Knock.. It's port ${PORT}`);

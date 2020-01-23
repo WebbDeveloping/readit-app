@@ -5,6 +5,7 @@ import './App.css';
 import Home from './components/Home/Home';
 import HomeTwo from './components/Home/HomeTwo';
 import TopNav from './components/TopNav/TopNav';
+import SinglePost from './components/Posts/SinglePost';
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
       <TopNav />
 
       <Switch>
-        <Route path='/2' component={HomeTwo} />
+        <Route path='/PostPage/:id' component={SinglePost} />
         <Route path='/' component={Home} />
       </Switch>
     </div>

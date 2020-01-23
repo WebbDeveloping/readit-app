@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect, Link } from 'react-router-dom';
 import axios from 'axios';
 import Sub from '../Subs/Sub';
 import Post from '../Posts/Post';
@@ -23,7 +24,7 @@ export default class Home extends Component {
     });
   }
   handleClickOnPost = e => {
-    console.log(e);
+    return <Redirect to={'/PostPage'} />;
   };
   render() {
     const { posts, subs } = this.state;
@@ -31,7 +32,8 @@ export default class Home extends Component {
     const subposts = posts.map((v, i, s) => {
       console.log(v);
       return (
-        <li onClick={() => this.handleClickOnPost(v.id)}>
+        // <li onClick={() => this.handleClickOnPost(v.id)}>
+        <Link to={`/PostPage/${v.id}`} style={{ textDecoration: 'none' }}>
           <Post
             key={i}
             id={v.id}
@@ -48,7 +50,8 @@ export default class Home extends Component {
             name={v.name}
             // onClick={this.handleClickOnPost(v.id)}
           />
-        </li>
+        </Link>
+        // </li>
       );
     });
     return (
