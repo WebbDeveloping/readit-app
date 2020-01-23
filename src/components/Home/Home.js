@@ -8,7 +8,8 @@ export default class Home extends Component {
     super();
     this.state = {
       posts: [],
-      subs: []
+      subs: [],
+      selectedPost: ''
     };
   }
   componentDidMount() {
@@ -21,37 +22,39 @@ export default class Home extends Component {
       });
     });
   }
+  handleClickOnPost = e => {
+    console.log(e);
+  };
   render() {
     const { posts, subs } = this.state;
-    console.log('posts', posts);
 
     const subposts = posts.map((v, i, s) => {
+      console.log(v);
       return (
-        // <Sub
-        //   key={i}
-        //   id={v.subread_id}
-        //   name={v.name}
-        //   desc={v.description}
-        //   created={v.created_at}
-        // />
-        <Post
-          key={i}
-          img={v.image}
-          title={v.title}
-          desc={v.description}
-          url={v.url}
-          subid={v.subread_id}
-          created={caches.created_at}
-          udated={v.updated_at}
-          name={v.name}
-        />
+        <li onClick={() => this.handleClickOnPost(v.id)}>
+          <Post
+            key={i}
+            id={v.id}
+            img={v.image}
+            title={v.title}
+            desc={v.description}
+            post_desc={v.post_description}
+            url={v.url}
+            subid={v.subread_id}
+            created={v.created_at}
+            post_created={v.post_created_at}
+            post_udated={v.post_updated_at}
+            udated={v.updated_at}
+            name={v.name}
+            // onClick={this.handleClickOnPost(v.id)}
+          />
+        </li>
       );
     });
-    console.log('sp', subposts);
     return (
       <div>
         <h1>HOMEEEE</h1>
-        {subposts}
+        <ul>{subposts}</ul>
       </div>
     );
   }
