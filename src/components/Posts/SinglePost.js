@@ -20,7 +20,7 @@ export default class SinglePost extends Component {
   }
   render() {
     const { name, title, desc, post_description } = this.state.post;
-    console.log(this.state.post);
+    // console.log(this.state.post);
     return (
       <article className='post'>
         <div className='sub-info-container row'>
@@ -35,7 +35,7 @@ export default class SinglePost extends Component {
         <div className='title-container'>
           <h3>{title}</h3>
         </div>
-        <h5>{post_description}</h5>
+        <h5>{post_description}</h5> cl
         <h5>{name}</h5>
       </article>
     );

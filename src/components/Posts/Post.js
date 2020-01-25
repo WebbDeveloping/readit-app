@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import './Post.css';
 
 export default function Post(props) {
-  console.log('post props', props);
+  // console.log('post props', props);
   return (
     <article className='post'>
       <div className='sub-info-container row'>
         <div className='sub-img'>.</div>
         <div className='sub-title-and-user'>
-          <Link to={`/SubHome`}>
+          <Link to={`/SubHome/${props.subid}`}>
             <h5 className='subread-text'>r/{props.name}</h5>
           </Link>
           <h5>u/{'userperson'}</h5>

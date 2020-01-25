@@ -30,7 +30,7 @@ export default class Home extends Component {
     const { posts, subs } = this.state;
 
     const subposts = posts.map((v, i, s) => {
-      console.log(v);
+      // console.log(v);
       return (
         // <li onClick={() => this.handleClickOnPost(v.id)}>
         <Link to={`/PostPage/${v.id}`} style={{ textDecoration: 'none' }}>

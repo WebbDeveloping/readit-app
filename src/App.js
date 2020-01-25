@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home';
-import HomeTwo from './components/Home/HomeTwo';
+
 import TopNav from './components/TopNav/TopNav';
 import SinglePost from './components/Posts/SinglePost';
 import SubHome from './components/Subs/SubHome';
@@ -15,7 +15,7 @@ const App = () => {
 
       <Switch>
         <Route path='/PostPage/:id' component={SinglePost} />
-        <Route path='/SubHome' component={SubHome} />
+        <Route path='/SubHome/:id' component={SubHome} />
         <Route path='/' component={Home} />
       </Switch>
     </div>
