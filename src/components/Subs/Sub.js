@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Sub.css';
 
 const Sub = props => (
   <div className='sub'>
-    {console.log('sub props', props)}
     <h1>{props.name}</h1>
     <div className='sub-content'>
       <h5>{props.desc}</h5>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Post.css';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default class SinglePost extends Component {
@@ -25,7 +26,9 @@ export default class SinglePost extends Component {
         <div className='sub-info-container row'>
           <div className='sub-img'>.</div>
           <div className='sub-title-and-user'>
-            <h5 className='subread-text'>r/{name}</h5>
+            <Link to={`/SubHome`}>
+              <h5 className='subread-text'>r/{name}</h5>
+            </Link>
             <h5>u/{'userperson'}</h5>
           </div>
         </div>

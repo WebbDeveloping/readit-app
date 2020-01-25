@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Post.css';
 
 export default function Post(props) {
@@ -8,7 +9,9 @@ export default function Post(props) {
       <div className='sub-info-container row'>
         <div className='sub-img'>.</div>
         <div className='sub-title-and-user'>
-          <h5 className='subread-text'>r/{props.name}</h5>
+          <Link to={`/SubHome`}>
+            <h5 className='subread-text'>r/{props.name}</h5>
+          </Link>
           <h5>u/{'userperson'}</h5>
         </div>
       </div>
