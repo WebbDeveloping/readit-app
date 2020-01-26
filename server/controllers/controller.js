@@ -31,5 +31,20 @@ module.exports = {
     } catch (error) {
       console.log(error);
     }
+  },
+  postPost: async (req, res) => {
+    try {
+      const db = req.app.get('db');
+      const post = await db.posts.createPost([
+        image,
+        title,
+        post_description,
+        url,
+        subread_id
+      ]);
+      res.sendStatus(200);
+    } catch (error) {
+      console.log(error);
+    }
   }
 };

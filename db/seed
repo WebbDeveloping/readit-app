@@ -27,7 +27,8 @@ POSTS
 -- created_at timestamp,
 -- updated_at timestamp
 -- )
--- INSERT INTO rposts ( image, title, description, url, subread_id, created_at, updated_at) values ('jskitty.img', 'I am teaching my cat JavaScript', 'I dont think he is catching on quickly. But I am doing my best', 'kitty.com', 1, now(), now() )
+INSERT INTO rposts ( image, title, post_description, url, subread_id, post_created_at, post_updated_at) values 
+('vodka.img', 'Magic isnt for nerds', 'My wife is hot as shit. and I found her through magic tricks.... so yeah. suck on that nerd', 'mymagicisdope.com', 3, now(), now() )
 
 SUBREADS
 -- create table rsubreads(
