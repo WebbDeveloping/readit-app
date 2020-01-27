@@ -17,7 +17,7 @@ const App = () => {
       <Switch>
         <Route path='/PostPage/:id' component={SinglePost} />
         <Route path='/SubHome/:id' component={SubHome} />
-        <Route path='/AddPost' component={AddPost} />
+        <Route path='/AddPost/:id' component={AddPost} />
 
         <Route path='/' component={Home} />
       </Switch>

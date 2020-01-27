@@ -26,7 +26,6 @@ export function updateCourseInfo(course) {
 }
 
 export function updateQueue(queue) {
-  console.log(queue);
   return {
     type: UPDATE_QUEUE,
     payload: queue
@@ -63,7 +62,6 @@ export default function reducer(state = initialState, action) {
       return { ...state, course: payload };
 
     case UPDATE_QUEUE:
-      console.log(payload);
       return { ...state, queue: payload };
 
     default:

@@ -22,6 +22,7 @@ app.get(`/api/getPosts`, cc.getPosts);
 app.get(`/api/subread/:id`, cc.getSubread);
 //Posts
 app.get(`/api/singlePost/:id`, cc.getSinglePost);
+app.get(`/api/subPosts/:id`, cc.getPostsForSub);
 app.post(`/api/postPost`, cc.postPost);
 
 app.listen(PORT, () => {

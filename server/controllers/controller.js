@@ -10,13 +10,23 @@ module.exports = {
     res.send(posts);
   },
   getSinglePost: async (req, res) => {
-    // console.log('hello world');
     try {
       const { id } = req.params;
       const db = req.app.get('db');
       const post = await db.posts.getSinglePost(id);
-      // console.log(post);
       res.send(post);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getPostsForSub: async (req, res) => {
+    console.log('made it');
+    try {
+      const { id } = req.params;
+      const db = req.app.get('db');
+      const posts = await db.posts.subPosts(id);
+      console.log(posts);
+      res.send(posts);
     } catch (err) {
       console.log(err);
     }
@@ -26,15 +36,13 @@ module.exports = {
       const { id } = req.params;
       const db = req.app.get('db');
       const sub = await db.subreads.SubById(id);
-      console.log('server', sub);
       res.send(sub);
     } catch (error) {
       console.log(error);
     }
   },
   postPost: async (req, res) => {
-    console.log('post posst', req.body);
-    const { image, title, post_description, url, subread_id } = req.body;
+    const { image, title, post_description, url, id } = req.body;
     try {
       const db = req.app.get('db');
       const post = await db.posts.createPost([
@@ -42,9 +50,8 @@ module.exports = {
         title,
         post_description,
         url,
-        subread_id
+        id
       ]);
-      console.log(666, post);
       res.sendStatus(200);
     } catch (error) {
       console.log(error);
