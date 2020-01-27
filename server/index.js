@@ -7,6 +7,7 @@ const { PORT, CONNECTION_STRING } = process.env;
 const cc = require('./controllers/controller');
 
 const app = express();
+app.use(express.json());
 
 massive(CONNECTION_STRING)
   .then(db => {

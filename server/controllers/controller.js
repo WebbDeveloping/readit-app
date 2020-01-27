@@ -33,6 +33,8 @@ module.exports = {
     }
   },
   postPost: async (req, res) => {
+    console.log('post posst', req.body);
+    const { image, title, post_description, url, subread_id } = req.body;
     try {
       const db = req.app.get('db');
       const post = await db.posts.createPost([
@@ -42,6 +44,7 @@ module.exports = {
         url,
         subread_id
       ]);
+      console.log(666, post);
       res.sendStatus(200);
     } catch (error) {
       console.log(error);
