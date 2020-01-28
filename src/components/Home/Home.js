@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
+import Styled from 'styled-components';
 import axios from 'axios';
+import { NewHomePop } from './Style';
 import Sub from '../Subs/Sub';
 import Post from '../Posts/Post';
 
@@ -56,8 +58,12 @@ export default class Home extends Component {
     });
     return (
       <div>
-        <h1>HOMEEEE</h1>
-        <ul>{subposts}</ul>
+        <NewHomePop>
+          <h3>News</h3>
+          <h3>Home</h3>
+          <h3>Popular</h3>
+        </NewHomePop>
+        <span>{subposts}</span>
       </div>
     );
   }

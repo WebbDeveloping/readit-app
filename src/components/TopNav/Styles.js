@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import Styled from 'styled-components';
 
-export const StyledHeader = styled.div`
+export const StyledHeader = Styled.div`
   background: #1c1c1c;
   padding: 0 20px;
   box-sizing: border-box;
@@ -23,7 +23,7 @@ export const StyledHeader = styled.div`
   }
 `;
 
-export const StyledRedLogo = styled.img`
+export const StyledRedLogo = Styled.img`
   width: 250px;
   margin-top: 20px;
 
@@ -33,7 +33,7 @@ export const StyledRedLogo = styled.img`
   }
 `;
 
-export const StyledTMDBLogo = styled.img`
+export const StyledTMDBLogo = Styled.img`
   width: 122px;
   margin-top: 25px;
   float: right;
