@@ -25,6 +25,8 @@ app.get(`/api/singlePost/:id`, cc.getSinglePost);
 app.get(`/api/subPosts/:id`, cc.getPostsForSub);
 app.post(`/api/postPost`, cc.postPost);
 
+app.delete(`/api/deletePost/:id`, cc.deletePost);
+
 app.listen(PORT, () => {
   console.log(`Knock Knock.. It's port ${PORT}`);
 });

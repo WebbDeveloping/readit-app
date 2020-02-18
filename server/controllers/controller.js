@@ -20,12 +20,10 @@ module.exports = {
     }
   },
   getPostsForSub: async (req, res) => {
-    console.log('made it');
     try {
       const { id } = req.params;
       const db = req.app.get('db');
       const posts = await db.posts.subPosts(id);
-      console.log(posts);
       res.send(posts);
     } catch (err) {
       console.log(err);
@@ -42,16 +40,30 @@ module.exports = {
     }
   },
   postPost: async (req, res) => {
-    const { image, title, post_description, url, id } = req.body;
+    const { title, description, subid } = req.body;
+    image = 'no-image-yet.png';
+    url = 'temporaryUrlsComingsoon.com';
     try {
       const db = req.app.get('db');
+      console.log(req.body);
       const post = await db.posts.createPost([
         image,
         title,
-        post_description,
+        description,
         url,
-        id
+        subid
       ]);
+      res.sendStatus(200);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  deletePost: (req, res) => {
+    const { id } = req.params;
+    try {
+      const db = req.app.get('db');
+      console.log(id);
+      const deleted = db.posts.deletePost(id);
       res.sendStatus(200);
     } catch (error) {
       console.log(error);

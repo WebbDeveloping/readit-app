@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Sub.css';
+// import './Sub.css';
 
 const Sub = props => (
   <div className='sub'>

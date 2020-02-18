@@ -25,35 +25,31 @@ export default class Home extends Component {
       });
     });
   }
-  handleClickOnPost = e => {
-    return <Redirect to={'/PostPage'} />;
+  deletePost = e => {
+    console.log('I am ready to execute the order 626');
+    // return <Redirect push to='/' />;
   };
   render() {
     const { posts, subs } = this.state;
 
     const subposts = posts.map((v, i, s) => {
-      // console.log(v);
       return (
-        // <li onClick={() => this.handleClickOnPost(v.id)}>
-        <Link to={`/PostPage/${v.id}`} style={{ textDecoration: 'none' }}>
-          <Post
-            key={i}
-            id={v.id}
-            img={v.image}
-            title={v.title}
-            desc={v.description}
-            post_desc={v.post_description}
-            url={v.url}
-            subid={v.subread_id}
-            created={v.created_at}
-            post_created={v.post_created_at}
-            post_udated={v.post_updated_at}
-            udated={v.updated_at}
-            name={v.name}
-            // onClick={this.handleClickOnPost(v.id)}
-          />
-        </Link>
-        // </li>
+        <Post
+          key={v.id}
+          id={v.id}
+          img={v.image}
+          title={v.title}
+          desc={v.description}
+          post_desc={v.post_description}
+          url={v.url}
+          subid={v.subread_id}
+          created={v.created_at}
+          post_created={v.post_created_at}
+          post_udated={v.post_updated_at}
+          udated={v.updated_at}
+          name={v.name}
+          delete={this.deletePost}
+        />
       );
     });
     return (
@@ -63,7 +59,7 @@ export default class Home extends Component {
           <h3>Home</h3>
           <h3>Popular</h3>
         </NewHomePop>
-        <span>{subposts}</span>
+        {subposts}
       </div>
     );
   }

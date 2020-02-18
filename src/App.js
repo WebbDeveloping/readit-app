@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Switch, Route } from 'react-router-dom';
-import './App.css';
+// import './App.css';
 import Home from './components/Home/Home';
 
 import TopNav from './components/TopNav/TopNav';

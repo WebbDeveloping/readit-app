@@ -1,6 +1,7 @@
 import React from 'react';
 import Styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import './nav.css';
 
 import redLogo from '../images/reddit.png';
 import mag from '../images/mag.png';
@@ -47,7 +48,7 @@ const Input = Styled.input`-webkit-appearance: none;
 
 const TopNav = () => (
   <StyledHeader>
-    <div className='header-content'>
+    <div className='header-content flex-nav'>
       <Link to={'/'}>
         <StyledRedLogo src={redLogo} alt='RMDB-logo' />
       </Link>
